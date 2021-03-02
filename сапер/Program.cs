@@ -77,6 +77,8 @@ namespace сапер
                     }
                 }
 
+                Logic.Map_create(ref map, ref score, ref num);
+
                /* for (int i = 0; i < 12; i++)
                 {
                     for (int j = 0; j < 12; j++)
@@ -88,7 +90,7 @@ namespace сапер
                         }
 
                     }
-                }*/
+               }
                 for (int i = 0; i < 10; i++)
                 {
                     map[i_bomb.Next(1, 10), j_bomb.Next(1, 10)] = 9;
@@ -120,6 +122,7 @@ namespace сапер
                         }
                     }
                 }
+               */
                 Console.WriteLine("\n");
                 for (int i = 0; i < 10; i++)
                 {
