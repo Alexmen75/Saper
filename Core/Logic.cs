@@ -8,6 +8,44 @@ namespace Core
 {
     public class Logic
     {
+        public static void Map_create(ref int[,] map_t, ref int[,] score_t, ref int num_t)
+        {
+            //int[,] map_t = new int[12, 12];
+            num_t = 0;
+            Random i_bomb = new Random();
+            Random j_bomb = new Random();
+            for (int i = 0; i < 10; i++)
+            {
+                map_t[i_bomb.Next(1, 10), j_bomb.Next(1, 10)] = 9;
+            }
+            for (int i = 1; i <= 10; i++)
+            {
+                //Console.WriteLine(i);
+                for (int j = 1; j <= 10; j++)
+                {
+                    //Console.WriteLine(i);
+                    if (map_t[i, j] != 9)
+                    {
+                        //Console.WriteLine("if");
+                        int count_bomb = 0;
+                        for (int i1 = i - 1; i1 <= i + 1; i1++)
+                        {
+                            // Console.WriteLine("i"+i1);
+                            for (int j1 = j - 1; j1 <= j + 1; j1++)
+                            {
+                                //Console.WriteLine("j" + j1);
+                                if (map_t[i1, j1] == 9)
+                                {
+                                    count_bomb++;
+                                }
+                            }
+                        }
+                        score_t[i, j] = map_t[i, j] = count_bomb;
+                        num_t+= count_bomb;
+                    }
+                }
+            }
+        }
        public static void Mip_map(int T, int L, int[,] map, ref int[,] score, ref int num_to_win)
         {
             for (int i = T + 1; ; i++)
@@ -160,8 +198,6 @@ namespace Core
                 default: Console.ForegroundColor = ConsoleColor.DarkRed; break;
 
             }
-
-
         }
     }
 }
