@@ -1,4 +1,5 @@
 ﻿using System;
+using Core;
 
 namespace сапер
 {
@@ -14,13 +15,13 @@ namespace сапер
 
             bool game = false;
 
-            Random all = new Random();
+           // Random all = new Random();
             Random i_bomb = new Random();
             Random j_bomb = new Random();
             int[,] map = new int[12,12];
             int num=0;
             int[,] score = new int[12, 12];
-            char[,] mask = new char[10, 10];
+           // char[,] mask = new char[10, 10];
             while (true)
             {
                 Console.ForegroundColor = value;
@@ -76,7 +77,7 @@ namespace сапер
                     }
                 }
 
-                for (int i = 0; i < 12; i++)
+               /* for (int i = 0; i < 12; i++)
                 {
                     for (int j = 0; j < 12; j++)
                     {
@@ -87,7 +88,7 @@ namespace сапер
                         }
 
                     }
-                }
+                }*/
                 for (int i = 0; i < 10; i++)
                 {
                     map[i_bomb.Next(1, 10), j_bomb.Next(1, 10)] = 9;
@@ -125,7 +126,7 @@ namespace сапер
                     Console.Write("    ");
                     for (int j = 0; j < 10; j++)
                     {
-                        Console.Write(mask[i, j] + "   ");
+                        Console.Write("▓" + "   ");
                     }
                     //for (int j = 0; j < 10; j++)
                    // {
@@ -187,11 +188,11 @@ namespace сапер
                                 {
                                     Console.Write("▒");
 
-                                    Mip_map(pos_T, pos_L, map, ref score, ref num_to_win);
+                                    Logic.Mip_map(pos_T, pos_L, map, ref score, ref num_to_win);
                                 }
                                 else if (map[pos_T, pos_L] > 0 && map[pos_T, pos_L] != 11)
                                 {
-                                    Color_reg(map[pos_T, pos_L]);
+                                    Logic.Color_reg(map[pos_T, pos_L]);
                                     Console.Write(map[pos_T, pos_L]);
                                     Console.SetCursorPosition(Console.CursorLeft - 1, Console.CursorTop);
                                     num_to_win += score[pos_T, pos_L];
@@ -253,7 +254,7 @@ namespace сапер
                 Console.Clear();
             }
         }
-        static void Mip_map(int T,int L, int[,] map,ref int[,] score,ref int num_to_win)
+        /*static void Mip_map(int T,int L, int[,] map,ref int[,] score,ref int num_to_win)
         {
             for (int i = T+1; ; i++)
             {
@@ -394,8 +395,8 @@ namespace сапер
                 }
                 Mip_map(T, j, map, ref score, ref num_to_win);
             }
-        }
-        static void Color_reg(int num_color)
+        }*/
+        /*static void Color_reg(int num_color)
         {
             switch (num_color)
             {
@@ -407,8 +408,8 @@ namespace сапер
             }
 
             
-        }
-        static void map_Drow(int [,] map)
+        }*/
+       /* static void map_Drow(int [,] map)
         {
             for (int i = 1; i < 11; i++)
             {
@@ -418,6 +419,6 @@ namespace сапер
                 }
                 Console.WriteLine("\n");
             }
-        }
+        }*/
     }
 }
