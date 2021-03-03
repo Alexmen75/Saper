@@ -15,7 +15,9 @@ namespace сапер
 
             bool game = false;
 
-           // Random all = new Random();
+            // Random all = new Random();
+            //(int[,], int[,], int) map_info;
+
             Random i_bomb = new Random();
             Random j_bomb = new Random();
             int[,] map = new int[12,12];
@@ -76,53 +78,57 @@ namespace сапер
                         break;
                     }
                 }
+                
+               var map_info = Logic.Map_create();
+                map = map_info.Item1;
+                score = map_info.Item2;
+                num = map_info.Item3;
+                 
 
-                Logic.Map_create(ref map, ref score, ref num);
+                /* for (int i = 0; i < 12; i++)
+                 {
+                     for (int j = 0; j < 12; j++)
+                     {
+                         map[i, j] = 0;
+                         if (i <= 9 && j <= 9)
+                         {
+                             mask[i, j] = '▓';
+                         }
 
-               /* for (int i = 0; i < 12; i++)
-                {
-                    for (int j = 0; j < 12; j++)
-                    {
-                        map[i, j] = 0;
-                        if (i <= 9 && j <= 9)
-                        {
-                            mask[i, j] = '▓';
-                        }
-
-                    }
-               }
-                for (int i = 0; i < 10; i++)
-                {
-                    map[i_bomb.Next(1, 10), j_bomb.Next(1, 10)] = 9;
+                     }
                 }
-                for (int i = 1; i <= 10; i++)
-                {
-                    //Console.WriteLine(i);
-                    for (int j = 1; j <= 10; j++)
-                    {
-                        //Console.WriteLine(i);
-                        if (map[i, j] != 9)
-                        {
-                            //Console.WriteLine("if");
-                            int count_bomb = 0;
-                            for (int i1 = i - 1; i1 <= i + 1; i1++)
-                            {
-                                // Console.WriteLine("i"+i1);
-                                for (int j1 = j - 1; j1 <= j + 1; j1++)
-                                {
-                                    //Console.WriteLine("j" + j1);
-                                    if (map[i1, j1] == 9)
-                                    {
-                                        count_bomb++;
-                                    }
-                                }
-                            }
-                            score[i, j] = map[i, j] = count_bomb;
-                            num += count_bomb;
-                        }
-                    }
-                }
-               */
+                 for (int i = 0; i < 10; i++)
+                 {
+                     map[i_bomb.Next(1, 10), j_bomb.Next(1, 10)] = 9;
+                 }
+                 for (int i = 1; i <= 10; i++)
+                 {
+                     //Console.WriteLine(i);
+                     for (int j = 1; j <= 10; j++)
+                     {
+                         //Console.WriteLine(i);
+                         if (map[i, j] != 9)
+                         {
+                             //Console.WriteLine("if");
+                             int count_bomb = 0;
+                             for (int i1 = i - 1; i1 <= i + 1; i1++)
+                             {
+                                 // Console.WriteLine("i"+i1);
+                                 for (int j1 = j - 1; j1 <= j + 1; j1++)
+                                 {
+                                     //Console.WriteLine("j" + j1);
+                                     if (map[i1, j1] == 9)
+                                     {
+                                         count_bomb++;
+                                     }
+                                 }
+                             }
+                             score[i, j] = map[i, j] = count_bomb;
+                             num += count_bomb;
+                         }
+                     }
+                 }
+                */
                 Console.WriteLine("\n");
                 for (int i = 0; i < 10; i++)
                 {
