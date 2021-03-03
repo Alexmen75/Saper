@@ -10,6 +10,7 @@ namespace Core
     {
         public static Tuple<int[,], int[,], int>  Map_create()
         {
+            Console.WriteLine("Hello");
             int[,] map_t = new int[12, 12];
             int[,] score_t = new int[12, 12];
             //int[,] map_t = new int[12, 12];
