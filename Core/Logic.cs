@@ -8,10 +8,12 @@ namespace Core
 {
     public class Logic
     {
-        public static void Map_create(ref int[,] map_t, ref int[,] score_t, ref int num_t)
+        public static Tuple<int[,], int[,], int>  Map_create()
         {
+            int[,] map_t = new int[12, 12];
+            int[,] score_t = new int[12, 12];
             //int[,] map_t = new int[12, 12];
-            num_t = 0;
+            int num_t = 0;
             Random i_bomb = new Random();
             Random j_bomb = new Random();
             for (int i = 0; i < 10; i++)
@@ -45,6 +47,7 @@ namespace Core
                     }
                 }
             }
+            return Tuple.Create(map_t, score_t, num_t);
         }
        public static void Mip_map(int T, int L, int[,] map, ref int[,] score, ref int num_to_win)
         {
