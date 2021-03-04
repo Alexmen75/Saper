@@ -92,13 +92,13 @@ namespace Core
                 //Console.Write("i=" + i);
                 if (i < 1)
                 {
-                    Console.SetCursorPosition(55, 0);
+                    //Console.SetCursorPosition(55, 0);
                     //Console.Write("break 1");
                     break;
                 }
                 else if (map[i, L] == 11)
                 {
-                    Console.SetCursorPosition(55, 0);
+                   //// Console.SetCursorPosition(55, 0);
                     //Console.Write("break 2");
                     break;
                 }
