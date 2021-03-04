@@ -7,6 +7,9 @@ namespace сапер
     {
         static void Main(string[] args)
         {
+            Console.SetWindowSize(44, 25);
+            Console.SetBufferSize(44, 25);
+
             ConsoleColor value = ConsoleColor.Blue;
 
             Console.CursorSize = 100;
@@ -230,14 +233,14 @@ namespace сапер
                                         }
                                     }
                                 }
-                                Console.SetCursorPosition(50, 5);
+                                Console.SetCursorPosition(0,24);
                                 Console.Write("You Lose");
-                                Console.SetCursorPosition(0, 25);
+                                Console.SetCursorPosition(0, 24);
                                 Console.ReadKey();
                                 game = false;
                                 break;
                             }
-                            Console.SetCursorPosition(0, 25);
+                            Console.SetCursorPosition(0, 24);
                             Console.Write("num = " + num + " \tScore=" + num_to_win + " ");
                             Console.SetCursorPosition(C_L, C_T);
                             break;
@@ -258,8 +261,8 @@ namespace сапер
                     }
                 }
                 num = 0;
-                Console.SetCursorPosition(50, 10);
-                Console.SetCursorPosition(0, 25);
+                Console.SetCursorPosition(43, 10);
+                Console.SetCursorPosition(0, 24);
                 Console.Clear();
             }
         }
