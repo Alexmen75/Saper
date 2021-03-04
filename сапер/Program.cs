@@ -1,17 +1,21 @@
 ﻿using System;
+using System.Diagnostics;
 using Core;
 
 namespace сапер
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
-            Console.SetWindowSize(44, 25);
-            Console.SetBufferSize(44, 25);
+            Console.SetWindowSize(Logic.WinWidth, Logic.WinHeight);
+            Console.SetBufferSize(Logic.WinWidth, Logic.WinHeight);
 
             ConsoleColor value = ConsoleColor.Blue;
 
+            //Process.Start(@"C:\Users\alexe\source\repos\сапер\CheatWin\bin\Debug\CheatWin.exe");
+            Process.Start(@"C:\Users\alexe\source\repos\сапер\CheatWin\bin\Debug\CheatWin.exe","1");
             Console.CursorSize = 100;
 
             ConsoleKey key;
@@ -233,7 +237,7 @@ namespace сапер
                                         }
                                     }
                                 }
-                                Console.SetCursorPosition(0,24);
+                                Console.SetCursorPosition(18,22);
                                 Console.Write("You Lose");
                                 Console.SetCursorPosition(0, 24);
                                 Console.ReadKey();
@@ -254,10 +258,12 @@ namespace сапер
                     }
                     if (num_to_win == num)
                     {
-                        
+                        Console.SetCursorPosition(18, 22);
+                        Console.ForegroundColor = ConsoleColor.Yellow;
                         Console.WriteLine("You Win!");
                         game = false;
                         Console.ReadKey();
+                        Console.ForegroundColor = ConsoleColor.Gray;
                     }
                 }
                 num = 0;

@@ -8,6 +8,8 @@ namespace Core
 {
     public class Logic
     {
+        public static int WinWidth = 44;
+        public static int WinHeight = 25;
         public static Tuple<int[,], int[,], int>  Map_create()
         {
             
